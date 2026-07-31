@@ -67,6 +67,7 @@ async function refreshSpotifyToken(token: JWT) {
             body: new URLSearchParams({
                 grant_type: "refresh_token",
                 refresh_token: token.refreshToken!,
+                redirect_uri: 'http://127.0.0.1:3000/api/auth/spotify'
             }),
         })
         const refreshed = await res.json()
